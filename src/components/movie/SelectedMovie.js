@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react"
-import { API_Key } from "./key"
-import StarRating from "./StarRating"
-import Loader from "./Loader"
+import { API_Key } from "../custom/key"
+import StarRating from "../custom/StarRating"
+import Loader from "../custom/Loader"
 export default function SelectedMovie({selectedId,handleCloseMovie,handleAddWatched,watched}){
     const [movie,setMovie]=useState({})
     const [isLoading,setIsLoading]=useState(false)
