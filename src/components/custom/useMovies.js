@@ -51,7 +51,7 @@ const searchMoviesHandler=async(controller)=>{
 async function fetchMovies(){
     try{
       setIsLoading(true)
-     const data=await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_Key}&s=interstellar`)
+     const data=await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=interstellar`)
      if(!data.ok) throw new Error("Something went wrong")
      const results=await data.json()
      if(results.Response==='False') throw new Error('Movie Not Found')
