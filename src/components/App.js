@@ -14,7 +14,7 @@ import { useMovies } from "./custom/useMovies";
 import { useLocalStorage } from "./custom/useLocalStorage";
 
 export default function App() {
-  const [query, setQuery] = useState("interstellar");
+  const [query, setQuery] = useState("");
   const [selectedId,setSelectedId]=useState(null)
 
   const [setStorage,getStorage] = useLocalStorage()

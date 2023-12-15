@@ -32,7 +32,7 @@ const searchMoviesHandler=async(controller)=>{
    const timerTemp=setTimeout(async()=>{
       console.log(":run")
       try{
-        const searchData=await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_Key}&s=${query}`,{signal:controller.signal})
+        const searchData=await fetch(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_API_KEY}&s=${query}`,{signal:controller.signal})
         const results=await searchData.json()
         console.log(results)
         if(results.Response==='False'){ throw new Error('Movie Not Found')}

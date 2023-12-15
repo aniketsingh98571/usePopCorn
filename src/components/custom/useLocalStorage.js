@@ -1,7 +1,10 @@
 import { useState } from "react"
 export const useLocalStorage=()=>{
     const [localStorageItem,setLocalStorageItem]=useState(()=>{
-        return JSON.parse(localStorage.getItem('watched'))
+        if(JSON.parse(localStorage.getItem('watched')))
+            return JSON.parse(localStorage.getItem('watched'))
+        else
+            return []
     })
     const setStorage=(data)=>{
         localStorage.setItem("watched",JSON.stringify(data))
