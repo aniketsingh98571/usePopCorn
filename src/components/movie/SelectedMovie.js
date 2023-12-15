@@ -1,5 +1,4 @@
 import { useState,useEffect } from "react"
-import { API_Key } from "../custom/key"
 import StarRating from "../custom/StarRating"
 import Loader from "../custom/Loader"
 export default function SelectedMovie({selectedId,handleCloseMovie,handleAddWatched,watched}){
@@ -17,7 +16,7 @@ export default function SelectedMovie({selectedId,handleCloseMovie,handleAddWatc
     },[selectedId])
     const getSelectedMovie=async()=>{
       setIsLoading(true)
-      const res=await fetch(`https://www.omdbapi.com/?apiKey=${API_Key}&i=${selectedId}`)
+      const res=await fetch(`https://www.omdbapi.com/?apiKey=${process.env.REACT_APP_API_Key}&i=${selectedId}`)
       const data=await res.json()
       console.log(data)
       document.title = `Movie | ${data.Title}`;
